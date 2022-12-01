@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module AdventOfCodeGenerator
+module AdventOfCode
   class Generate
     def start
 

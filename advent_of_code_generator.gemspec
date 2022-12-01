@@ -4,7 +4,7 @@ require_relative "lib/advent_of_code_generator/version"
 
 Gem::Specification.new do |spec|
   spec.name = "advent_of_code_generator"
-  spec.version = AdventOfCodeGenerator::VERSION
+  spec.version = AdventOfCode::VERSION
   spec.authors = ["Florian Lecointe"]
   spec.email = "florian@tymate.com"
 
