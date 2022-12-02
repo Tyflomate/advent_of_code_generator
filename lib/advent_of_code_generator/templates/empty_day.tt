@@ -1,0 +1,15 @@
+# frozen_string_literal: true
+
+class Day<%= day %>
+  def initialize
+    @input = File.readlines('./<%= day %>/input.txt')
+  end
+
+  def part1
+    # TODO: Write your solution here
+  end
+
+  def part2
+    # TODO: Write your solution here
+  end
+end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "lib/advent_of_code_generator/version"
+require_relative "lib/advent_of_code_generator/utils/version"
 
 Gem::Specification.new do |spec|
   spec.name = "advent_of_code_generator"
@@ -28,6 +28,7 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
   spec.add_runtime_dependency 'thor', '~> 1.2', '>= 1.2.1'
+  spec.add_dependency 'rest-client', '~> 2.1'
 
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
