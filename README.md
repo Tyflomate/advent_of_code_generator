@@ -26,7 +26,7 @@ export AOC_COOKIE=COOKIE
 
 To generate a day of the current year, run:
 
-    $ aoc generate DAY
+    $ aoc generate --day DAY
 
 This will create a directory for the day DAY with the ruby file class to solve the puzzle and the input file.
 
