@@ -6,28 +6,28 @@ module AdventOfCodeGenerator
   class GenerateDay < Thor::Group
     include Thor::Actions
 
-    class_option :day
-    class_option :year
+    class_option :day, :type => :numeric
+    class_option :year, :type => :numeric
 
     def self.source_root
       File.dirname(__FILE__)
     end
 
     def create_day_directory
-      unless Dir.exist?(day)
+      unless Dir.exist?(day_name)
         say "Creating day #{day} directory", :green
-        Dir.mkdir(day)
+        Dir.mkdir(day_name)
       end
     end
 
     def create_solution_file
       say "Creating day #{day} solution file", :green
-      template('templates/empty_day.tt', "#{day}/#{day}.rb")
+      template('templates/empty_day.tt', "#{day_name}/day#{day_name}.rb")
     end
 
     def create_input_file
       say "Creating day #{day} input file", :green
-      create_file "#{day}/input.txt", fetch_input
+      create_file "#{day_name}/input.txt", fetch_input
     end
 
     def prints_done
@@ -38,7 +38,7 @@ module AdventOfCodeGenerator
 
     def fetch_input
       RestClient.get(
-        "https://adventofcode.com/#{year}/day/#{day.to_i}/input",
+        "https://adventofcode.com/#{year}/day/#{day}/input",
         cookies: { session: ENV.fetch('AOC_COOKIE', '') },
         'User-Agent' => "github.com/Tyflomate/advent_of_code_generator by florian@tymate.com"
       ).body
@@ -47,11 +47,17 @@ module AdventOfCodeGenerator
     end
 
     def day
-      options[:day]
+      @day ||= options[:day]
+    end
+
+    def day_name
+      return day.to_s if day > 9
+
+      "0#{day}"
     end
 
     def year
-      options[:year]
+      @year ||= options[:year]
     end
   end
 end

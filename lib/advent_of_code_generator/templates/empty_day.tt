@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class Day<%= day %>
+class Day<%= day_name %>
   def initialize
-    @input = File.readlines('./<%= day %>/input.txt')
+    @input = File.readlines('./<%= day_name %>/input.txt')
   end
 
   def part1

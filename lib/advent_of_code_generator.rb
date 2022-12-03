@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "thor"
-require "pry"
 require_relative "advent_of_code_generator/utils"
 require_relative "advent_of_code_generator/generate_day"
 
@@ -21,7 +20,7 @@ module AdventOfCodeGenerator
       day = parse_day(options[:day])
       year = parse_year(options[:year])
 
-      invoke 'generateDay', :day => day, :year => year
+      invoke 'generateDay', [], :day => day, :year => year
     rescue AdventOfCodeGenerator::Error => e
       say e.message, :red
     end
