@@ -11,7 +11,7 @@ module AdventOfCodeGenerator
     include Thor::Actions
     include AdventOfCodeGenerator::Parser
 
-    map "-g" => :generate
+    map "g" => :generate
 
     option :day, :type => :numeric, :required => true, :aliases => "-d"
     option :year, :type => :numeric, :aliases => "-y"
