@@ -2,7 +2,7 @@
 
 class Day<%= day_name %>
   def initialize
-    @input = File.readlines('./<%= day_name %>/input.txt')
+    @input = File.readlines('./<%= day_name %>/input.txt', chomp: true)
   end
 
   def part1
