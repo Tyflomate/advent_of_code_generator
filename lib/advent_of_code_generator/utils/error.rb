@@ -17,4 +17,16 @@ module AdventOfCodeGenerator
       "Please insert a valid year between the first iteration of 2015 and current year."
     end
   end
+
+  class MissingSolutionFileError < Error
+    def message
+      "There is no solution file to execute. Please run generate command first"
+    end
+  end
+
+  class MissingInputFileError < Error
+    def message
+      "There is no input file to read. Please run generate command first"
+    end
+  end
 end
