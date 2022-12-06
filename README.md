@@ -17,7 +17,9 @@ Then run bundle install and your up to go !
 
 ### Generate
 
-For this gem to work, we need to use you Advent of code session cookie in order to fetch your input. You can find
+This command will create a directory for the day DAY with the ruby file class to solve the puzzle and the input file.
+
+For this command to work, we need to use you Advent of code session cookie in order to fetch your input. You can find
 it in the cookies of https://adventofcode.com/2022/day/DAY/input. Add it to you environment variables as:
 
 ```
@@ -28,11 +30,35 @@ To generate a day of the current year, run:
 
     $ bundle exec aoc generate --day DAY
 
-This will create a directory for the day DAY with the ruby file class to solve the puzzle and the input file.
+You will have an output like the following:
+
+```
+Creating day 1 directory
+Creating day 1 solution file
+      create  01/day01.rb
+Creating day 1 input file
+      create  01/input.txt
+Generation done, enjoy !
+
+```
 
 ### Solve
 
-Incomming command
+This command will print in your terminal the result of your solution for the day DAY.
+
+To do so, run:
+
+    $ bundle exec aoc solve --day DAY
+
+You will have an output like the following:
+
+```
+Loading solution file...
+Resolving part 1...
+Part 1 result: 579
+Resolving part 2...
+Part 2 result: 567
+```
 
 ### Publish
 
